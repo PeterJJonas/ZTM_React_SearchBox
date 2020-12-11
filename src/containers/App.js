@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 // import Scroll from '../components/Scroll.js';
-import Stayput from '../components/Stayput';
+import StayPut from '../components/StayPut';
 import './App.css';
 
 class App extends Component {
@@ -34,10 +34,10 @@ render() {
     <h1 className='tc f1'>Loading</h1> :
     (
       <div className='tc'>
-        <Stayput>
+        <StayPut>
           <h1 className='f1'>Monsterfriends</h1>
           <SearchBox searchChange={this.onSearchChange}/>
-        </Stayput>
+        </StayPut>
         <CardList monsters={filteredMonsters}/>
       </div>
     );

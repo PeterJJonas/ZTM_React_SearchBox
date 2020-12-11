@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Stayput = (props) => {
+const StayPut = (props) => {
   return (
     <div style={{
       position: 'sticky',
@@ -13,4 +13,4 @@ const Stayput = (props) => {
   )
 }
 
-export default Stayput;
+export default StayPut;
