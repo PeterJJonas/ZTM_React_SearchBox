@@ -8,7 +8,7 @@ const Card = ({ name, email, username, id }) => {
       <div>
         <h2>{name}</h2>
         <h3>{username}</h3>
-        <p>{email}</p>
+        <p className='email'>{email}</p>
       </div>
     </div>
   )

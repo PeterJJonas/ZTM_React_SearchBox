@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
-import Scroll from './Scroll.js';
+// import Scroll from './Scroll.js';
+import Stayput from './Stayput';
 import './App.css';
 
 class App extends Component {
@@ -25,18 +26,19 @@ class App extends Component {
 
   render() {
     const filteredMonsters = this.state.monsters.filter(monster => {
-      return monster.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+      const searchIn = (monster.name.toLowerCase() + monster.username.toLowerCase());
+      return searchIn.toLowerCase().includes(this.state.searchfield.toLowerCase());
     })
     if (this.state.monsters.length === 0) {
       return <h1 className='tc f1'>Loading</h1>
     } else {
         return (
           <div className='tc'>
-            <h1 className='f1'>Monsterfriends</h1>
-            <SearchBox searchChange={this.onSearchChange}/>
-            <Scroll>
-              <CardList monsters={filteredMonsters}/>
-            </Scroll>
+            <Stayput>
+              <h1 className='f1'>Monsterfriends</h1>
+              <SearchBox searchChange={this.onSearchChange}/>
+            </Stayput>
+            <CardList monsters={filteredMonsters}/>
           </div>
       );
     }
